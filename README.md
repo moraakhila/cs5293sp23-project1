@@ -10,7 +10,7 @@ From Enrom email dataset, few files were used for testing the project. The sensi
 * Student ID: 113531532
 
 ## Demo Video
-
+![Final](https://user-images.githubusercontent.com/113566461/229979723-38b96010-38ef-4b7c-9064-d14640feec78.gif)
 
 ## Getting Started
 
@@ -65,11 +65,11 @@ pipenv install pytest
 ```
 * Run the project using main.py
 ```
-pipenv run python project1/redactor.py --input '*.txt'  --names --dates --phones --genders --address --output 'files/' --stats stderr
+pipenv run python redactor.py --input '*.txt'  --names --dates --phones --genders --address --output 'files/' --stats stderr
 ```
 or
 ```
-pipenv run python project1/redactor.py --input '*.txt'  --names --dates --phones --genders --address --output 'files/' --stats stats
+pipenv run python redactor.py --input '*.txt'  --names --dates --phones --genders --address --output 'files/' --stats stats
 ```
 * By running the program using above command, it will generate redacted files with an extension .redacted and save all the files in files/ folder. Screenshot of redacted files folder:
 * ![image](https://user-images.githubusercontent.com/113566461/229969365-2b808578-c0a2-45d4-9df1-c3b51573c786.png)
@@ -128,24 +128,10 @@ There might be some bugs if the assumptions are not correct:
 * I only selected some files from huge dataset. This may not contain all the required flags. 
 
 ## Acknowledgments
-Below are the resources that are used for this project:
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
+Below are the resources which I used for this project
 * [Github Readme template](https://github.com/matiassingers/awesome-readme)
 * [NLTK](https://www.nltk.org/)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+* [spacy](https://spacy.io/usage/spacy-101#whats-spacy)
+* [US states](https://www.faa.gov/air_traffic/publications/atpubs/cnt_html/appendix_a.html)
+* [Regular Expression](https://www.w3schools.com/python/python_regex.asp)
+* [spacy](https://realpython.com/natural-language-processing-spacy-python/)
