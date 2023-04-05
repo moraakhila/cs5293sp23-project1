@@ -20,18 +20,66 @@ Below are the starting steps which needs to be done before starting the project:
 ssh -i [path-to-private-key] [username]@[instance-external-ip]
 ```
 * Create a tree structure as shown below in VM instance:
-### Dependencies
+![image](https://user-images.githubusercontent.com/113566461/229966821-0577dc91-024a-4856-a767-0d4d0c130712.png)
+* We need to have python installed in the instance. If not, install it using below command:
+```
+sudo apt-get install python3
+```
+* To redact data, five sample files were taken from Enrom email dataset files and are stored in docs/ folder as File 1.txt, File 2.txt, File 3.txt, File 4.txt, File 5.txt
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+### Packages
 
-### Installing
+* spacy
+* nltk
+* os
+* sys
+* re
+* glob
+* argparse
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+## Executing program
 
-### Executing program
+Below is the detailed explanation on how to run the project:
+* Clone the project into your instance:
+```
 
+```
+* Change the current working directory to cloned repository:
+```
+cd cs5293sp23-project1
+```
+* Create a virtual environment
+```
+pipenv install
+```
+* Activate virtual environment
+```
+pipenv shell
+```
+* Install necessary packages
+```
+pipenv install nltk
+pipenv install spacy
+pipenv run python -m spacy download en_core_web_md
+pipenv install pytest
+```
+* Run the project using main.py
+```
+pipenv run python project1/redactor.py --input '*.txt'  --names --dates --phones --genders --address --output 'files/' --stats stderr
+```
+or
+```
+pipenv run python project1/redactor.py --input '*.txt'  --names --dates --phones --genders --address --output 'files/' --stats stats
+```
+* By running the program using above command, it will generate redacted files with an extension .redacted and save all the files in files/ folder. Screenshot of redacted files folder:
+![image](https://user-images.githubusercontent.com/113566461/229969365-2b808578-c0a2-45d4-9df1-c3b51573c786.png)
+* Run pytests using below command:
+```
+pipenv run python -m pytest -v
+```
+
+### Functions
+There is one file named redactor.py which consists of all the logic for redacting the input files:
 * How to run the program
 * Step-by-step bullets
 ```
