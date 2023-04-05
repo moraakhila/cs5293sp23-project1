@@ -20,7 +20,7 @@ Below are the starting steps which needs to be done before starting the project:
 ssh -i [path-to-private-key] [username]@[instance-external-ip]
 ```
 * Create a tree structure as shown below in VM instance:
-![image](https://user-images.githubusercontent.com/113566461/229966821-0577dc91-024a-4856-a767-0d4d0c130712.png)
+* ![image](https://user-images.githubusercontent.com/113566461/229966821-0577dc91-024a-4856-a767-0d4d0c130712.png)
 * We need to have python installed in the instance. If not, install it using below command:
 ```
 sudo apt-get install python3
@@ -72,7 +72,7 @@ or
 pipenv run python project1/redactor.py --input '*.txt'  --names --dates --phones --genders --address --output 'files/' --stats stats
 ```
 * By running the program using above command, it will generate redacted files with an extension .redacted and save all the files in files/ folder. Screenshot of redacted files folder:
-![image](https://user-images.githubusercontent.com/113566461/229969365-2b808578-c0a2-45d4-9df1-c3b51573c786.png)
+* ![image](https://user-images.githubusercontent.com/113566461/229969365-2b808578-c0a2-45d4-9df1-c3b51573c786.png)
 * Run pytests using below command:
 ```
 pipenv run python -m pytest -v
