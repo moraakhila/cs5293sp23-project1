@@ -1,7 +1,13 @@
 # cs5293sp23-project1
-# Project Title
+# The Redactor
 
-Simple overview of use/purpose.
+Whenever sensitive information is shared with the public, the data must go through a redaction process. That is, all sensitive names, places, and other sensitive information must be hidden. Documents such as police reports, court transcripts, and hospital records all contain sensitive information. Redacting this information is often expensive and time consuming.
+From Enrom email dataset, few files were used for testing the project. The sensitive information like names, date, phone numbers, address, gender are redacted. The redacted information is stored in a new directory. Also, all the statistics of the redacted data is stored in stats file.
+
+# Author Details
+* Name: Akhila Mora
+* Email: akhila.mora@ou.edu
+* Student ID: 113531532
 
 ## Description
 
