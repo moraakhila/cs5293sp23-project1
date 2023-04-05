@@ -42,7 +42,7 @@ sudo apt-get install python3
 Below is the detailed explanation on how to run the project:
 * Clone the project into your instance:
 ```
-
+git clone https://github.com/moraakhila/cs5293sp23-project1.git
 ```
 * Change the current working directory to cloned repository:
 ```
