@@ -272,10 +272,6 @@ def redactor_function(file, name, gender, date, phone, address, output, stats):
     if stats == "stderr":
         with open(stats, "a", encoding="utf-8") as f:
             f.writelines(error_array)
-    elif stats == "stdout":
-        with open(stats,"a",encoding="utf-8") as f:
-            f.writelines(stats_array)
-            f.writelines(stats_info)
     else:
         with open(stats,"a",encoding="utf-8") as f:
             f.writelines(stats_array)
@@ -293,7 +289,7 @@ if __name__ == "__main__":
     parser.add_argument("--output", type = str,required = True, help = "Output")
     parser.add_argument("--stats", type = str, required = True, help = "Status")
     args = parser.parse_args()
-    if not all(getattr(args, arg) for arg in ["input", "names", "genders", "dates", "phones", "address", "output", "stats"]):
-        print("Please pass all the required arguments!")
+    if not any([args.names, args.genders, args.dates,args.phones, args.address]):
+        print("Please pass atleast one redation type!")
     else:
         arg_function(args)    

@@ -63,7 +63,7 @@ pipenv install spacy
 pipenv run python -m spacy download en_core_web_md
 pipenv install pytest
 ```
-* Run the project using main.py
+* Run the project using readctor.py
 ```
 pipenv run python redactor.py --input '*.txt'  --names --dates --phones --genders --address --output 'files/' --stats stderr
 ```
@@ -95,8 +95,20 @@ There is one file named redactor.py which consists of all the logic for redactin
 * store_output()
    * This function takes output directory, output data and file name as parameters. It stores an output in the output directory. It changes the output filename and adds .redacted to it. It writes all the redacted data to output file.
 * redactor_function()
-   * This function takes file; name, gender, date, phone, address flags; output and stats as parameters. It calls all the above listed functions and redacts each file present in the docs directory. It also updates stats file based on the input given to stats. If stats is given as stderr, it stores error array as stderr. Else it stores statistics to stats file.
-
+   * This function takes file; name, gender, date, phone, address flags; output and stats as parameters. It calls all the above listed functions and redacts each file present in the docs directory. It also updates stats file based on the input given to stats. If stats is given as stderr, it stores error array as stderr. Else it stores statistics to the file name given through command prompt.For example:
+   * Here, stderr stores error data 
+   ```
+   pipenv run python redactor.py --input '*' --dates --output 'files/' --stats stderr
+   ```
+   * Here, stats stores statistics of the data
+   ```
+   pipenv run python redactor.py --input '*' --dates --output 'files/' --stats stats
+   ```
+* __main__ function()
+   * Atleast one of the redaction flags must be given to run the program. It is not necessary to give all the redaction flags. Below is the command to redact only dates:
+   ```
+   pipenv run python redactor.py --input '*' --dates --output 'files/' --stats stderr
+   ```
 ## Test Cases
 For the purpose of testing, I have stored a file(File1.txt) in tests folder. test_redactor.py was used to write test cases of all functions
 * test_name_redact(info): This function is used to test name_redact() function. It returns true if names are redacted.
